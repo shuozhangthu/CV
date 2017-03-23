@@ -16,16 +16,16 @@ script:
 after_success:
     - git config --global user.email ${GIT_EMAIL}
     - git config --global user.name ${GIT_NAME}
-    - git clone --quiet --branch=travis-build https://${GH_TOKEN}@github.com/johntfoster/CV travis-build > /dev/null
+    - git clone --quiet --branch=travis-build https://${GH_TOKEN}@github.com/shuozhangthu/CV travis-build > /dev/null
     - cd travis-build
-    - cp -f $HOME/build/johntfoster/CV/cv.pdf .
-    - cp -f $HOME/build/johntfoster/CV/cv_cockrell.pdf .
-    - cp -f $HOME/build/johntfoster/CV/cv.html .
-    - cp -f $HOME/build/johntfoster/CV/cv.docx .
+    - cp -f $HOME/build/shuozhangthu/CV/cv.pdf .
+    - cp -f $HOME/build/shuozhangthu/CV/cv_cockrell.pdf .
+    - cp -f $HOME/build/shuozhangthu/CV/cv.html .
+    - cp -f $HOME/build/shuozhangthu/CV/cv.docx .
     - git add cv.pdf cv_cockrell.pdf cv.html cv.docx
     - git commit -m "Travis CI autocommit from travis build ${TRAVIS_BUILD_NUMBER}"
     - git push -fq origin travis-build > /dev/null
     - gem install travis
-    - travis restart -r johnfoster-pge-utexas/johnfoster-pge-utexas.github.io --token ${TRAVIS_TOKEN} --skip-completion-check
+    - travis restart -r shuozhangtsu/shuozhangtsu.github.io --token ${TRAVIS_TOKEN} --skip-completion-check
 
 
